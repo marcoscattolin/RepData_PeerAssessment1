@@ -50,13 +50,6 @@ points(averageDailySteps, pch = 19)
 
 In order to identify which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps; dataframe are recasted as follows:
 
-```r
-library(reshape2)
-data$variable <- "steps"
-maxDailySteps <- dcast(data = data, date ~ variable, fun.aggregate = max, value.var = "steps", 
-    na.rm = TRUE)
-maxDailySteps <- merge(maxDailySteps, data)
-```
 
 
 From **interval_table** new dataframe, vector of intervals with the maximum number of steps per each day is extracted and stored in **max_interval**, together with number of occurences in **max_days**:
